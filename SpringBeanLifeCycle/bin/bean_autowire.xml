@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+         default-init-method="init"
+         default-destroy-method="destroy">
+         
+     <context:annotation-config />
+     
+     <bean id="studentDAO" class="com.accolite.spring.StudentDAO" > <!-- init-method="init" destroy-method="destroy"  -->
+     <property name="driver" value="com.mysql.jdbc.Driver"></property>
+     <property name="url" value="jdbc:mysql://localhost:3306/product"></property>
+     <property name="userName" value="root"></property>
+     <property name="password" value="1ITtopper*"></property>
+     </bean>
+     
+     <bean id="hello" class="com.accolite.spring.Hello" />
+     
+    <!--   <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"></bean>
+     Activates @postconstruct and @predestroy when annotation-config is not activated -->
+
+</beans>
+
+
